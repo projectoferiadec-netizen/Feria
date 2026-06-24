@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Orientación Vocacional Pro</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <button class="pestana activa" onclick="cambiarPestana(event, 'seccion-quiz')"><span>TEST</span></button>
+        <button class="pestana" onclick="cambiarPestana(event, 'seccion-texto')"><span>INFO</span></button>
+    </nav>
+
+    <main class="contenido-principal">
+        
+        <div id="seccion-quiz" class="contenido-pestana activo">
+            <form id="quiz-form">
+                
+                <div class="fila-pregunta color1">
+                    <div class="columna-izquierda">
+                        <p>1. Si tuvieras la oportunidad de ayudar a resolver una crisis mundial, ¿en qué área preferirías trabajar?</p>
+                        <label><input type="radio" name="p1" value="A"> Investigando vacunas, erradicando enfermedades o atendiendo pacientes en zonas críticas.</label><br>
+                        <label><input type="radio" name="p1" value="B"> Desarrollando algoritmos para predecir catástrofes climáticas o analizar datos de propagación global.</label><br>
+                        <label><input type="radio" name="p1" value="C"> Creando campañas culturales, documentales o expresiones artísticas para concientizar a la población.</label><br>
+                        <label><input type="radio" name="p1" value="D"> Redactando nuevas leyes internacionales, gestionando recursos económicos o mediando conflictos políticos.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color2">
+                    <div class="columna-izquierda">
+                        <p>2. ¿Qué tipo de libros, podcasts o documentales suelen atrapar tu atención?</p>
+                        <label><input type="radio" name="p2" value="A"> El funcionamiento del cuerpo humano, cirugías complejas, neurociencia o primeros auxilios.</label><br>
+                        <label><input type="radio" name="p2" value="B"> Avances en automatización, cómo piensan las máquinas, Big Data o modelos matemáticos.</label><br>
+                        <label><input type="radio" name="p2" value="C"> Biografías de artistas, historia del arte, análisis cinematográfico, filosofía o literatura.</label><br>
+                        <label><input type="radio" name="p2" value="D"> Casos judiciales reales, estrategias de grandes empresas, geopolítica o psicología del consumidor.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color3">
+                    <div class="columna-izquierda">
+                        <p>3. ¿Cuál de estos entornos de trabajo te resultaría más estimulante en el día a día?</p>
+                        <label><input type="radio" name="p3" value="A"> Un hospital, clínica o laboratorio bioquímico, siempre en constante movimiento.</label><br>
+                        <label><input type="radio" name="p3" value="B"> Una oficina tecnológica o home office, trabajando con potentes servidores y flujos masivos de información.</label><br>
+                        <label><input type="radio" name="p3" value="C"> Un estudio de diseño, un set de filmación, una editorial o un taller creativo independiente.</label><br>
+                        <label><input type="radio" name="p3" value="D"> Un juzgado, una sala de juntas empresariales, una consultora o liderando proyectos gubernamentales.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color4">
+                    <div class="columna-izquierda">
+                        <p>4. Cuando te enfrentás a un problem complejo, ¿cuál es tu primer instinto para solucionarlo?</p>
+                        <label><input type="radio" name="p4" value="A"> Evaluar los síntomas físicos o biológicos de la situación y actuar con calma bajo presión.</label><br>
+                        <label><input type="radio" name="p4" value="B"> Buscar estadísticas, procesar variables lógicas y encontrar un patrón matemático subyacente.</label><br>
+                        <label><input type="radio" name="p4" value="C"> Abordarlo desde una perspectiva intuitiva, creativa y emocional, buscando una salida original.</label><br>
+                        <label><input type="radio" name="p4" value="D"> Analizar las reglas del juego, negociar con las partes implicadas y actuar bajo un plan estructurado.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color5">
+                    <div class="columna-izquierda">
+                        <p>5. Si pudieras dominar una de estas habilidades avanzadas mañana mismo, ¿cuál elegirías?</p>
+                        <label><input type="radio" name="p5" value="A"> Comprender a la perfección la genética celular y realizar diagnósticos médicos precisos.</label><br>
+                        <label><input type="radio" name="p5" value="B"> Programar redes neuronales artificiales capaces de procesar millones de datos en segundos.</label><br>
+                        <label><input type="radio" name="p5" value="C"> Dominar la narrativa audiovisual, la ilustración digital o el pensamiento filosófico profundo.</label><br>
+                        <label><input type="radio" name="p5" value="D"> Dominar la oratoria persuasiva, la creación de negocios rentables o la defensa legal corporativa.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color1">
+                    <div class="columna-izquierda">
+                        <p>6. En el ámbito deportivo o de actividad física, ¿qué aspecto te genera más interés?</p>
+                        <label><input type="radio" name="p6" value="A"> El análisis de la kinesiología, nutrición deportiva y los límites anatómicos del cuerpo humano.</label><br>
+                        <label><input type="radio" name="p6" value="B"> Las métricas de rendimiento avanzado, recolección de estadísticas de juego y analítica de rendimiento en tiempo real.</label><br>
+                        <label><input type="radio" name="p6" value="C"> La estética de las disciplinas rítmicas, la danza, o el diseño visual de la indumentaria y branding deportivo.</label><br>
+                        <label><input type="radio" name="p6" value="D"> La gestión de clubes, la representación legal de atletas, las finanzas o el marketing de eventos deportivos.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color2">
+                    <div class="columna-izquierda">
+                        <p>7. Al escuchar música o analizar una obra sonora, ¿en qué te fijás principalmente?</p>
+                        <label><input type="radio" name="p7" value="A"> En la musicoterapia y cómo ciertas frecuencias alteran positivamente el cerebro y el ritmo cardíaco.</label><br>
+                        <label><input type="radio" name="p7" value="B"> En los patrones matemáticos del ritmo, los algoritmos de compresión de audio o cómo funcionan las recomendaciones de Spotify.</label><br>
+                        <label><input type="radio" name="p7" value="C"> En la carga lírica y poética, el sentimiento transmitido o el diseño acústico e instrumental de la pista.</label><br>
+                        <label><input type="radio" name="p7" value="D"> En la monetización, la gestión de derechos de autor, contratos de discográficas o la producción económica de festivales.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color3">
+                    <div class="columna-izquierda">
+                        <p>8. Si tuvieras que planificar un viaje a un destino completamente desconocido, ¿qué te entusiasma más organizar?</p>
+                        <label><input type="radio" name="p8" value="A"> Conocer las condiciones sanitarias, climáticas y asegurar un botiquín médico preventivo eficiente para el grupo.</label><br>
+                        <label><input type="radio" name="p8" value="B"> Crear un itinerario optimizado mediante software, cruzando variables de transporte, costos e históricos de clima para no fallar.</label><br>
+                        <label><input type="radio" name="p8" value="C"> Visitar museos históricos, patrimonios arquitectónicos locales, galerías de arte y capturar registros fotográficos únicos.</label><br>
+                        <label><input type="radio" name="p8" value="D"> Investigar las costumbres socioculturales, el comportamiento económico local, las divisas o pactar reuniones de networking.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color4">
+                    <div class="columna-izquierda">
+                        <p>9. ¿Cuál de estos pasatiempos elegirías para desconectar durante el fin de semana?</p>
+                        <label><input type="radio" name="p9" value="A"> Hacer senderismo, reconectar con la naturaleza, aprender sobre plantas medicinales o meditar.</label><br>
+                        <label><input type="radio" name="p9" value="B"> Resolver rompecabezas de lógica pura, ajedrez, aprender trucos de automatización o videojuegos de estrategia analítica.</label><br>
+                        <label><input type="radio" name="p9" value="C"> Escribir historias, dibujar, tocar un instrumento musical, ir al teatro o tomar clases de fotografía.</label><br>
+                        <label><input type="radio" name="p9" value="D"> Leer noticias internacionales, analizar mercados financieros, debatir sobre sociología o planificar metas de inversión personal.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color5">
+                    <div class="columna-izquierda">
+                        <p>10. Si te invitaran a dar una conferencia TED, ¿sobre cuál de estos ejes temáticos preferirías hablar?</p>
+                        <label><input type="radio" name="p10" value="A"> El futuro de la longevidad humana, la biotecnología médica aplicada y la cura de afecciones crónicas.</label><br>
+                        <label><input type="radio" name="p10" value="B"> El impacto ético de los grandes volúmenes de datos y cómo los modelos predictivos de IA moldean las decisiones cotidianas.</label><br>
+                        <label><input type="radio" name="p10" value="C"> El rol de la filosofía y el arte como salvavidas emocionales e históricos en la era hipertecnológica.</label><br>
+                        <label><input type="radio" name="p10" value="D"> El desarrollo de nuevos modelos económicos sustentables, liderazgos empáticos y normativas legales globales.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+                <div class="fila-pregunta color1">
+                    <div class="columna-izquierda">
+                        <p>11. ¿Qué tipo de problemas cotidianos de la sociedad te genera más urgencia o interés por intentar resolver?</p>
+                        <label><input type="radio" name="p11" value="A"> La falta de acceso a salud pública de calidad y el desarrollo lento de tratamientos de rehabilitación.</label><br>
+                        <label><input type="radio" name="p11" value="B"> El desorden masivo de información informática y la vulnerabilidad de la seguridad informática de los ciudadanos.</label><br>
+                        <label><input type="radio" name="p11" value="C"> El olvido de las raíces culturales, la pérdida de espacios para la libre expresión y la desconexión creativa.</label><br>
+                        <label><input type="radio" name="p11" value="D"> La inestabilidad económica, la falta de educación financiera y las injusticias normativas en el ámbito legal.</label>
+                    </div>
+                    <div class="columna-derecha"></div>
+                </div>
+
+            </form>
+
+            <div id="texto-final">
+                <h2 id="resultado-titulo"></h2>
+                <p id="resultado-descripcion"></p>
+                <p id="status-supabase" style="font-size: 12px; opacity: 0.6; margin-top: 15px;"></p>
+            </div>
+        </div>
+
+        <div id="seccion-texto" class="contenido-pestana">
+            <div class="caja-texto-puro">
+                <h2>Información General del Test</h2>
+                <p>Este sistema interactivo evalúa tendencias de comportamiento, analítica y gustos situacionales a lo largo de 11 módulos de preguntas cerradas.</p>
+                <p>Al completarse, las variables se inyectan en tiempo real hacia una base de datos relacional remota en Supabase mientras calcula tu perfil vocacional óptimo en la pantalla.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
