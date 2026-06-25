@@ -1,6 +1,6 @@
 // CONFIGURACIÓN DE SUPABASE
 const SUPABASE_URL = "https://mmeefvyxtzluvdxcwjcm.supabase.co";
-const SUPABASE_KEY = "https://mmeefvyxtzluvdxcwjcm.supabase.co/rest/v1/"; // <-- ACÁ VA TU CLAVE REAL (eyJhbGci...)
+const SUPABASE_KEY = "sb_publishable_YKUxYeDoCOTpsCJkoGsZWg_hSjTfP2O"; // <-- ACÁ VA TU CLAVE REAL (eyJhbGci...)
 
 // Inicializar cliente Supabase de manera segura
 const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
