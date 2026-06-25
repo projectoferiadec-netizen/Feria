@@ -1,6 +1,6 @@
 // CONFIGURACIÓN DE SUPABASE
 const SUPABASE_URL = "https://mmeefvyxtzluvdxcwjcm.supabase.co";
-const SUPABASE_KEY = "tu-anon-key-real-larguísima-de-supabase"; // <-- ACÁ PEGÁ TU KEY EMPEZADA EN eyJhbGci
+const SUPABASE_KEY = "tu-anon-key-real-larguísima-de-supabase"; // <-- ACÁ VA TU CLAVE REAL (eyJhbGci...)
 
 // Inicializar cliente Supabase de manera segura
 const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
@@ -44,7 +44,7 @@ const perfilesCarreras = {
     },
     'D': {
         titulo: "Tu perfil ideal: Negocios, Leyes y Ciencias Sociales",
-        descripcion: "Se te da muy bien la visión estratégica, la gestión organizacional y las estructuras normativas. Tenés aptitud para liderar equipos, entender la macroeconomía, defender derechos y resolver conflictos en el marco empresarial, legal o institucional."
+        descripcion: "Se te da muy bien la visión estratégica, la gestión organizational y las estructuras normativas. Tenés aptitud para liderar equipos, entender la macroeconomía, defender derechos y resolver conflictos en el marco empresarial, legal o institucional."
     }
 };
 
