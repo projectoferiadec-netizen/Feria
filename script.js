@@ -1,31 +1,27 @@
-// CONFIGURACIÓN DE SUPABASE: Reemplazá esto con tus datos de Supabase (Project Settings > API)
-const SUPABASE_URL = "https://tu-proyecto.supabase.co";
-const SUPABASE_KEY = "tu-anon-key-de-supabase";
+// CONFIGURACIÓN DE SUPABASE
+const SUPABASE_URL = "https://mmeefvyxtzluvdxcwjcm.supabase.co";
+const SUPABASE_KEY = "tu-anon-key-real-larguísima-de-supabase"; // <-- ACÁ PEGÁ TU ANON KEY REAL
 
 // Inicializar cliente Supabase de manera segura
 const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-// LORICA DE PESTAÑAS MEJORADA (Arregla el bug del clic)
+// LÓGICA DE PESTAÑAS MEJORADA (Arregla el bug del clic)
 function cambiarPestana(evento, idSeccion) {
-    // 1. Ocultar todos los bloques de contenido
     const contenidos = document.getElementsByClassName("contenido-pestana");
     for (let i = 0; i < contenidos.length; i++) {
         contenidos[i].classList.remove("activo");
     }
 
-    // 2. Apagar el estado visual activo en todas las pestañas
     const pestanas = document.getElementsByClassName("pestana");
     for (let i = 0; i < pestanas.length; i++) {
         pestanas[i].classList.remove("activa");
     }
 
-    // 3. Mostrar la sección que el usuario solicitó
     const seccionObjetivo = document.getElementById(idSeccion);
     if (seccionObjetivo) {
         seccionObjetivo.classList.add("activo");
     }
     
-    // SOLUCIÓN AL BUG: Forzamos a buscar siempre el botón contenedor, ignorando el span interno
     const botonActivo = evento.target.closest('.pestana');
     if (botonActivo) {
         botonActivo.classList.add("activa");
@@ -65,7 +61,6 @@ if (form) {
         const seleccionadas = form.querySelectorAll('input[type="radio"]:checked');
 
         if (seleccionadas.length === totalPreguntas) {
-            
             let votos = { 'A': 0, 'B': 0, 'C': 0, 'D': 0 };
             let payload = {};
 
@@ -92,7 +87,6 @@ if (form) {
 
             payload['perfil_resultado'] = resultadoFinal.titulo;
 
-            // Envío asíncrono a Supabase
             if (supabase) {
                 statusSupabase.textContent = "Guardando respuestas en la base de datos...";
                 const { error } = await supabase.from('respuestas_vocacionales').insert([payload]);
@@ -107,7 +101,6 @@ if (form) {
             } else {
                 statusSupabase.textContent = "Supabase no inicializado. Verificá tus llaves en script.js";
             }
-
         } else {
             textoFinal.style.display = 'none';
         }
