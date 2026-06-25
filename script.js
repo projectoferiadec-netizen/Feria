@@ -1,11 +1,11 @@
 // CONFIGURACIÓN DE SUPABASE
 const SUPABASE_URL = "https://mmeefvyxtzluvdxcwjcm.supabase.co";
-const SUPABASE_KEY = "tu-anon-key-real-larguísima-de-supabase"; // <-- ACÁ PEGÁ TU ANON KEY REAL
+const SUPABASE_KEY = "tu-anon-key-real-larguísima-de-supabase"; // <-- ACÁ PEGÁ TU KEY EMPEZADA EN eyJhbGci
 
 // Inicializar cliente Supabase de manera segura
 const supabase = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-// LÓGICA DE PESTAÑAS MEJORADA (Arregla el bug del clic)
+// LÓGICA DE PESTAÑAS MEJORADA
 function cambiarPestana(evento, idSeccion) {
     const contenidos = document.getElementsByClassName("contenido-pestana");
     for (let i = 0; i < contenidos.length; i++) {
